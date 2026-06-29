@@ -160,4 +160,7 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b"Login received")
 
-HTTPServer(("0.0.0.0", 8080), Handler).serve_forever()
+import os
+
+port = int(os.environ.get("PORT", 8080))
+HTTPServer(("0.0.0.0", port), Handler).serve_forever()
